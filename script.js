@@ -202,3 +202,48 @@ add(...x); // using spread to perform a rest function
 
 // ==== SHORT CIRCUTING WITH "||" OPERATOR
 // 1. it accepts any data types, return ANY data types
+console.log(3 || 'Kamas'); // 3 - this returns the first value if true , but returns the next if the first is falsy
+console.log('' || 'Jonas'); // Jonas - because the first value is falsy , therefore the second is being returned
+
+console.log(undefined || 0 || '' || 55 || null); // 55 
+
+const guest1 = restaurant.newGuests || 10;
+console.log(guest1); // 10
+
+console.log('----- && OPERATOR ------');
+// the && operator does the opposite of the || operator as it reeturns the first value once it's false
+// example ...
+console.log(0 && 'Kamas'); // 0 - cause 0 is falsy
+console.log(8 && 'Kamas'); // Kamas - cause the first value is truthy,it returns the next value
+console.log('Hello' && 43 && null && 'Kamas'); // Null - cause the first value is truthy,it returns the next value, the next value is still truthy so it keeps running and returns the next falsy value or the last value in the block
+
+
+// ASSIGNMENT OPERATORS
+const rest1 = {
+  name: 'Capri',
+  numbGuests: 0,
+};
+const rest2 = {
+  name: 'La pizza',
+  owner: 'Kamas Ltd.',
+};
+
+// OR assignnment operator
+// rest1.numbGuests = rest1.numbGuests || 10;
+// rest2.numbGuests = rest2.numbGuests || 10;
+// rest1.numbGuests ||= 10; // shorter method compared to the code above
+// rest2.numbGuests ||= 10;
+
+// NULLISH ?? assignment operator (null 0r undefined)
+rest1.numbGuests ??= 10;
+rest2.numbGuests ??= 10;
+
+
+//  AND assignment operator
+// rest1.owner = rest1.owner && '<Anonymous>'; // returns undefined because the fist value is undefined and falsy too 
+// rest2.owner = rest2.owner && '<Anonymous>'; // returns anonymous because the fist value is true . [shorter way to write it 👇]
+rest1.owner &&= '<Anonymous>';
+rest2.owner &&= '<Anonymous>';
+
+console.log(rest1); // 0 - because it is neither null nor undefined
+console.log(rest2); // returns 10 cause it's undefined
