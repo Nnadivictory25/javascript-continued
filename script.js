@@ -1,8 +1,8 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 const openingHours = {
   thu: {
@@ -47,6 +47,196 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+
+// MAPS
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+// console.log(rest.set(2, 'Lisbon, Portugal'));
+
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Orgnic'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'We are open :)')
+//   .set(false, 'We are closed :(');
+
+//   console.log(rest.get('name'));
+//   console.log(rest.get(true));
+//   console.log(rest.get(1));
+
+// const time = 8;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// console.log(rest);
+// console.log(rest.size); // size of items in map
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 🎉'],
+  [false, 'Try again !'],
+]);
+// console.log(question); 
+
+// // convert objects to map
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+
+// Quiz App
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if(typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// const answer = 3;
+// console.log(answer);
+// // done by me to determine if answer is correct or not and loggin the true/false value of the question map 👇
+// // if (answer === 3) {
+// //  console.log(question.get(true)); 
+// // } else {
+// //   console.log(question.get(false)); 
+// // };
+// // OR
+// console.log(question.get(question.get('correct') === answer));
+
+// Convert map to array
+// console.log([...question]);
+
+
+// WORKING WITH STRINGS (has the properties of an array)
+// const airline = 'TAP Air Portugal';
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+// const passenger = 'kAmaS';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect); // Kamas
+
+// // Comparing emails
+// const email = 'hello@kamas.com';
+// const loginEmail = ' Hello@Kamas.Com \n';
+
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail); // hello@kamas.com
+
+// // repplacing
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace(',', '.').replace('£', '$');
+// console.log(priceUS);
+
+// const announcement = 'All passengers come to boarding door 23. Boarding door 23 !';
+// console.log(announcement.replaceAll('door', 'gate'));
+
+//Booleans
+// .includes(), .startsWith(), .endsWith()
+
+
+
+// - SPLIT() and JOIN()
+
+// console.log('a+very+nice+string'.split('+')); // ['a', 'very', 'nice', 'string']
+// console.log('Nnadi Victory'.split(' ')); // ['Nnadi', 'Victory']
+
+// const [firstName, lastName] = 'Nnadi Victory'.split(' ');
+
+// const newName = ['Mr.', firstName, lastName].join(' ');
+// console.log(newName); // Mr. Nnadi Victory
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
+// }
+// capitalizeName('nnadi victory chikamagozi');
+// capitalizeName('james smith paul');
+
+// // PADDING 
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(20, '+'));
+
+// const maskCreditCard = function (number) {
+//   const str = number + ''; // to convert aa number to a string
+//   const last = str.slice(-4) // getting the last 4 values of the string
+//   return last.padStart(str.length, '*');
+// }
+
+// console.log(maskCreditCard(12345678910));
+// console.log(maskCreditCard(25364758273645432));
+// console.log(maskCreditCard(1727722));
+
+// // REPEAT
+// const message2 = 'Bad weather... All Departures Delayed... ';
+// console.log(message2.repeat(5));
+
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes waiting in line ${'✈️'.repeat(n)}`);
+// }
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
+
+
+
+
+
+
+
+
+
+
+
+
+// const plane = 'A320';
+
+// console.log(plane[0]); // A 
+// console.log(plane[1]); // 3
+// console.log(plane[2]); // 2
+
+// console.log(airline.length); // 16
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+
+// console.log(airline.slice(4)); // Air Portugal -- counting the string from left to right , it logs the 4th value and all the rest of the following value too
+// console.log(airline.slice(4, 7)); // Air -- starts at 4 ends at 7 therefore value  = last - first .
+
+// console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+
+// console.log(airline.slice(-2)); // al - will start extracting from the last
+// console.log(airline.slice(1, -1)); 
+
+// const checkMiddleSeat = function (seat) {
+//   // B AND E ARE MIDDLE SEATS
+//   const s = seat.slice(-1);
+//   if (s === 'B' || s === 'E')
+//     console.log('You got the middle seat 🤦‍♂️');
+//   else console.log('You got lucky 😊');
+// }
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
+
+
+
+
 
 // LOOPING OBJECTS: PROPERTY NAMES
 // const properties = Object.keys(openingHours);
@@ -157,7 +347,7 @@ const restaurant = {
 // console.log(newMenu); // just like before, it will list the items in the spread array and add 'Gnocci' to the list also -  ['Pizza', 'Pasta', 'Risotto', 'Gnocci']
 
 // COPY ARRAY
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];/
 
 // JOIN 2 OR MORE ARRAYS
 // const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
@@ -472,37 +662,153 @@ const game = {
 // MY SOLUTION 👇
 
 // 1.
-for (const [i, goalScorer] of game.scored.entries()) {
-  console.log(`Goal ${i + 1} : ${goalScorer}`);
+// for (const [i, goalScorer] of game.scored.entries()) {
+//   console.log(`Goal ${i + 1} : ${goalScorer}`);
+// }
+// // 2.
+// const oddsProperties = Object.keys(game.odds);
+// console.log(oddsProperties);
+// const oddsValue = Object.values(game.odds);
+// console.log(oddsValue);
+
+
+// let sum = 0;
+// for (const odds of oddsValue) {
+//   sum += odds;
+// };
+// console.log(sum);
+
+// const averageOdds = sum / 3;
+// console.log(averageOdds);
+
+// console.log(`Odd of victory ${game.team1}: ${oddsValue[0]}`);
+// console.log(`Odd of draw: ${oddsValue[1]}`);
+// console.log(`Odd of victory ${game.team2}: ${oddsValue[2]}`);
+
+// // 3.
+// let scorers = game.scored.reduce(function (goalScorer, numberOfGoals) {
+//   if (typeof goalScorer[numberOfGoals] === 'undefined') {
+//     goalScorer[numberOfGoals] = 1;
+//   } else {
+//     goalScorer[numberOfGoals] += 1;
+//   }
+
+//   return goalScorer;
+// }, {});
+// console.log(scorers);
+
+
+
+///////////////////////////////////////
+// Coding Challenge #3
+
+/* 
+Let's continue with our football betting app! This time, we have a map with a log of the events that happened during the game. The values are the events themselves, and the keys are the minutes in which each event happened (a football game has 90 minutes plus some extra time).
+1. Create an array 'events' of the different game events that happened (no duplicates)
+2. After the game has finished, is was found that the yellow card from minute 64 was unfair. So remove this event from the game events log.
+3. Print the following string to the console: "An event happened, on average, every 9 minutes" (keep in mind that a game has 90 minutes)
+4. Loop over the events and log them to the console, marking whether it's in the first half or second half (after 45 min) of the game, like this:
+      [FIRST HALF] 17: ⚽️ GOAL
+GOOD LUCK 😀
+*/
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// my solution 👇
+// 1.
+// const events = ['⚽️ GOAL', '🔁 Substitution', '🔶 Yellow card', '🔴 Red card'];
+// OR
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// //2.
+// gameEvents.delete(64);
+// console.log(gameEvents);
+
+// //3.
+// const time = [...gameEvents.keys()].pop()
+// console.log(time);
+
+// console.log(
+//   `An event happened, on average, every ${time / gameEvents.size} minutes
+//   `
+// );
+
+// //4.
+// for (const [key, value] of gameEvents) {
+//   key <= 45 ? console.log(`[FIRST HALF]`,key,`${value}`) : console.log(`[SECOND HALF]`,key,`${value}`); 
+// }
+
+
+
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+/* 
+Write a program that receives a list of variable names written in underscore_case and convert them to camelCase.
+The input will come from a textarea inserted into the DOM (see code below), and conversion will happen when the button is pressed.
+THIS TEST DATA (pasted to textarea)
+underscore_case
+ first_name
+Some_Variable 
+  calculate_AGE
+delayed_departure
+SHOULD PRODUCE THIS OUTPUT (5 separate console.log outputs)
+underscoreCase      ✅
+firstName           ✅✅
+someVariable        ✅✅✅
+calculateAge        ✅✅✅✅
+delayedDeparture    ✅✅✅✅✅
+HINT 1: Remember which character defines a new line in the textarea 😉
+HINT 2: The solution only needs to work for a variable made out of 2 words, like a_b
+HINT 3: Start without worrying about the ✅. Tackle that only after you have the variable name conversion working 😉
+HINT 4: This challenge is difficult on purpose, so start watching the solution in case you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+GOOD LUCK 😀
+*/
+
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
+    
+//     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`;
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// })
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+  // 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const getCode = str => str.slice(0, 3).toUpperCase(); // gets only the first 3 values of a str and also converts them to uppercase
+
+for (const flight of flights.split('+')) {
+  // console.log(flight);
+  const [type, from, to, time] = flight.split(';');
+
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll('_', ' ')} from ${getCode(from)} to ${getCode(to)} (${time.replace(':', 'h')})`.padStart(54);
+  console.log(output);
 }
-// 2.
-const oddsProperties = Object.keys(game.odds);
-console.log(oddsProperties);
-const oddsValue = Object.values(game.odds);
-console.log(oddsValue);
-
-
-let sum = 0;
-for (const odds of oddsValue) {
-  sum += odds;
-};
-console.log(sum);
-
-const averageOdds = sum / 3;
-console.log(averageOdds);
-
-console.log(`Odd of victory ${game.team1}: ${oddsValue[0]}`);
-console.log(`Odd of draw: ${oddsValue[1]}`);
-console.log(`Odd of victory ${game.team2}: ${oddsValue[2]}`);
-
-// 3.
-let scorers = game.scored.reduce(function (goalScorer, numberOfGoals) {
-  if (typeof goalScorer[numberOfGoals] === 'undefined') {
-    goalScorer[numberOfGoals] = 1;
-  } else {
-    goalScorer[numberOfGoals] += 1;
-  }
-
-  return goalScorer;
-}, {});
-console.log(scorers);
